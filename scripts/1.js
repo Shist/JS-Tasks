@@ -1,16 +1,16 @@
 // Задание 2
 // Запросите у пользователя его имя. Выведите в окошке (с помощью функции alert) фразу: Привет, Николай!
 // (вместо Николай должно показываться имя, которое ввел пользователь)
+console.log("Task 2");
 let userName2 = prompt("Enter your name:");
 userName2 = userName2 == null ? "Anonymous" : userName2;
 alert(`Hello, ${userName2}!`);
 
 // Задание 3
 // Запросите у пользователя число. Затем запросите степень, в которую нужно возвести это число. Выведите в консоль результат.
-let userNum3 = Number(prompt("Enter the number:", 0));
-userNum3 = userNum3 === null ? 0 : userNum3;
-let userDegree3 = Number(prompt("Enter degree for the number:", 0));
-userDegree3 = userDegree3 === null ? 0 : userDegree3;
+console.log("Task 3");
+const userNum3 = Number(prompt("Enter the number:", 0));
+const userDegree3 = Number(prompt("Enter degree for the number:", 0));
 if (!isNaN(userNum3) && !isNaN(userDegree3)) {
   console.log(userNum3 ** userDegree3);
 } else {
@@ -20,8 +20,9 @@ if (!isNaN(userNum3) && !isNaN(userDegree3)) {
 // Задание 5
 // Создать произвольную переменную, присвоить ей произвольное строковое значение. C помощью if написать условие: если переменная
 // равна “hidden”, присвоить ей значение “visible”, иначе - “hidden”.
+console.log("Task 5");
 let str5 = "visible";
-if (str5 == "hidden") {
+if (str5 === "hidden") {
   str5 = "visible";
 } else {
   str5 = "hidden";
@@ -36,10 +37,10 @@ console.log(str5);
 // - если переменная равна нулю, присвоить ей 1;
 // - если меньше нуля - строку “less then zero”;
 // - если больше нуля - используя оператор “присвоение”, переменную умножить на 10 (использовать краткую запись).
-let num6 = prompt("Enter the number:", 0);
-num6 = num6 === null ? 0 : num6;
+console.log("Task 6");
+let num6 = Number(prompt("Enter the number:", 0));
 if (!isNaN(num6)) {
-  if (num6 == 0) {
+  if (num6 === 0) {
     num6 = 1;
   } else if (num6 < 0) {
     num6 = "less then zero";
@@ -56,8 +57,8 @@ if (!isNaN(num6)) {
 // (Не забывайте, что от пользователя мы всегда получаем строку).
 // Создайте переменную-результат и присвойте ей значение:
 // если введенное пользователем число меньше 5, то результат будет '0', если больше -  '1'. Выведите результат в консоль.
-let userNum7 = prompt("Enter the number:", 0);
-userNum7 = userNum7 === null ? 0 : userNum7;
+console.log("Task 7");
+const userNum7 = Number(prompt("Enter the number:", 0));
 if (!isNaN(userNum7)) {
   const result7 = userNum7 < 5 ? "0" : "1";
   console.log(result7);
@@ -69,10 +70,9 @@ if (!isNaN(userNum7)) {
 // Попросить пользователя ввести одно число, следом - второе число. Вывести в консоль максимальное из чисел (наибольшее) с текстом:
 // Большее число: 7 (вместо 7 будет максимальное число из введенных пользователем).
 // * предусмотреть вариант ввода одинаковых чисел
-let firstUserNum8 = prompt("Enter the first number:", 0);
-firstUserNum8 = firstUserNum8 === null ? 0 : firstUserNum8;
-let secondUserNum8 = prompt("Enter the second number:", 0);
-secondUserNum8 = secondUserNum8 === null ? 0 : secondUserNum8;
+console.log("Task 8");
+const firstUserNum8 = Number(prompt("Enter the first number:", 0));
+const secondUserNum8 = Number(prompt("Enter the second number:", 0));
 if (!isNaN(firstUserNum8) && !isNaN(secondUserNum8)) {
   if (firstUserNum8 > secondUserNum8) {
     console.log(`The greater number: ${firstUserNum8}`);
@@ -90,10 +90,9 @@ if (!isNaN(firstUserNum8) && !isNaN(secondUserNum8)) {
 // Задание 9
 // Определить, является ли введенное пользователем число num1 кратным введенному числу num2.
 // Обе переменные запрашиваем у пользователя, ответ выводим в консоль.
-let firstNum9 = prompt("Enter the first number:", 0);
-firstNum9 = firstNum9 === null ? 0 : firstNum9;
-let secondNum9 = prompt("Enter the second number:", 0);
-secondNum9 = secondNum9 === null ? 0 : secondNum9;
+console.log("Task 9");
+const firstNum9 = Number(prompt("Enter the first number:", 0));
+const secondNum9 = Number(prompt("Enter the second number:", 0));
 if (!isNaN(firstNum9) && !isNaN(secondNum9)) {
   firstNum9 % secondNum9 === 0
     ? console.log(`Yes, ${firstNum9} % ${secondNum9} == 0`)
@@ -106,8 +105,8 @@ if (!isNaN(firstNum9) && !isNaN(secondNum9)) {
 // Запросить у пользователя средний балл, записать в переменную.
 // Если средний балл 1-4 - вывести в консоль "Двоечник, иди учись!", если 5-8 - "Неплохо, но давай еще поднажмем!",
 // если 9-10 - "Ого, да ты настоящий отличник!" (можно другие фразы - по желанию).
-let avrgMark10 = prompt("Enter the average mark:", 0);
-avrgMark10 = avrgMark10 === null ? 0 : avrgMark10;
+console.log("Task 10");
+const avrgMark10 = Number(prompt("Enter the average mark:", 0));
 if (!isNaN(avrgMark10)) {
   if (avrgMark10 < 0) {
     console.log("You've entered negative value of the mark! Minimum is 0.");
@@ -137,10 +136,9 @@ if (!isNaN(avrgMark10)) {
 // - 90, если балл за экзамен более 75 и количество проектов не менее 5.
 // - 75, если балл за экзамен более 50 и количество проектов не менее 2.
 // - 0 во всех других случаях.
-let examMark11 = prompt("Enter the exam mark:", 0);
-examMark11 = examMark11 === null ? 0 : examMark11;
-let projectsAmount11 = prompt("Enter the projects' amount:", 0);
-projectsAmount11 = projectsAmount11 === null ? 0 : projectsAmount11;
+console.log("Task 11");
+const examMark11 = Number(prompt("Enter the exam mark:", 0));
+const projectsAmount11 = Number(prompt("Enter the projects' amount:", 0));
 if (!isNaN(examMark11) && !isNaN(projectsAmount11)) {
   if (examMark11 < 0) {
     console.log("You've entered negative value of the exam mark!");
@@ -170,13 +168,15 @@ if (!isNaN(examMark11) && !isNaN(projectsAmount11)) {
 // Если вы арендуете авто на 3 или более дней, ваша общая скидка составит $20.
 // Количество дней, на которые нужно арендовать авто, запрашиваются с помощью prompt. Напишите программу,
 // рассчитывающую общую стоимость аренды на запрашиваемое количество дней.
+console.log("Task 12");
 const rentDayCost12 = 40;
 const weekDiscount12 = 50;
 const weekDaysNum12 = 7;
 const threeDaysDiscount12 = 20;
 const threeDaysNum12 = 3;
-let userRentDays12 = prompt("Enter the whole amount of auto rent days:", 0);
-userRentDays12 = userRentDays12 === null ? 0 : userRentDays12;
+const userRentDays12 = Number(
+  prompt("Enter the whole amount of auto rent days:", 0)
+);
 if (!isNaN(userRentDays12)) {
   if (userRentDays12 % 1 != 0) {
     console.log("You've entered not an integer value of the auto rent days!");
