@@ -16,11 +16,29 @@ console.log(userNum3 ** userDegree3);
 // Задание 5
 // Создать произвольную переменную, присвоить ей произвольное строковое значение. C помощью if написать условие: если переменная
 // равна “hidden”, присвоить ей значение “visible”, иначе - “hidden”.
-let str = "visible";
-if (str == "hidden") {
-  str = "visible";
+let str5 = "visible";
+if (str5 == "hidden") {
+  str5 = "visible";
 } else {
-  str = "hidden";
+  str5 = "hidden";
 }
 // ИЛИ ТАК:
-// str = (str === "hidden" ? "visible" : "hidden");
+// str5 = (str5 === "hidden" ? "visible" : "hidden");
+console.log(str5);
+
+// Задание 6
+// Создать переменную и присвоить ей число.
+// Записать условие:
+// - если переменная равна нулю, присвоить ей 1;
+// - если меньше нуля - строку “less then zero”;
+// - если больше нуля - используя оператор “присвоение”, переменную умножить на 10 (использовать краткую запись).
+let num6 = prompt("Enter the number:", 0);
+num6 = (num6 === null ? 0 : num6);
+if (num6 == 0) {
+    num6 = 1;
+} else if (num6 < 0) {
+    num6 = "less then zero"
+} else {
+    num6 *= 10;
+}
+console.log(num6);
