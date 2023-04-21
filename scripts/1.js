@@ -100,24 +100,61 @@
 //   console.log("You've entered not nubmers!");
 // }
 
-// Задание 10
-// Запросить у пользователя средний балл, записать в переменную.
-// Если средний балл 1-4 - вывести в консоль "Двоечник, иди учись!", если 5-8 - "Неплохо, но давай еще поднажмем!",
-// если 9-10 - "Ого, да ты настоящий отличник!" (можно другие фразы - по желанию).
-let avrgMark10 = prompt("Enter the average mark:", 0);
-avrgMark10 = avrgMark10 === null ? 0 : avrgMark10;
-if (!isNaN(avrgMark10)) {
-    if (avrgMark10 < 0) {
-        console.log("You've entered negative value of the mark! Minimum is 0.");
-    } else if (avrgMark10 > 10) {
-        console.log("You've entered impossibly big value of the mark! Maximum is 10.");
+// // Задание 10
+// // Запросить у пользователя средний балл, записать в переменную.
+// // Если средний балл 1-4 - вывести в консоль "Двоечник, иди учись!", если 5-8 - "Неплохо, но давай еще поднажмем!",
+// // если 9-10 - "Ого, да ты настоящий отличник!" (можно другие фразы - по желанию).
+// let avrgMark10 = prompt("Enter the average mark:", 0);
+// avrgMark10 = avrgMark10 === null ? 0 : avrgMark10;
+// if (!isNaN(avrgMark10)) {
+//     if (avrgMark10 < 0) {
+//         console.log("You've entered negative value of the mark! Minimum is 0.");
+//     } else if (avrgMark10 > 10) {
+//         console.log("You've entered impossibly big value of the mark! Maximum is 10.");
+//     } else {
+//         if (avrgMark10 >= 9) {
+//             console.log("Wow, you are a real gem!");
+//         } else if (avrgMark10 >= 5) {
+//             console.log("Not bad, but let's push some more!");
+//         } else {
+//             console.log("Twinkle, go study!");
+//         }
+//     }
+// } else {
+//   console.log("You've entered not a nubmer!");
+// }
+
+// Задание 11
+// Запросить у пользователя ответы на 2 вопроса:
+// - балл за экзамен (от 0 до 100)
+// - количество выполненных проектов (от 0 и больше)
+// Вывести в консоль общий выпускной балл в соответствии с этими значениями:
+// - 100, если балл за экзамен более 90 или количество проектов более 10.
+// - 90, если балл за экзамен более 75 и количество проектов не менее 5.
+// - 75, если балл за экзамен более 50 и количество проектов не менее 2.
+// - 0 во всех других случаях.
+let examMark11 = prompt("Enter the exam mark:", 0);
+examMark11 = examMark11 === null ? 0 : examMark11;
+let projectsAmount11 = prompt("Enter the projects' amount:", 0);
+projectsAmount11 = projectsAmount11 === null ? 0 : projectsAmount11;
+if (!isNaN(examMark11) && !isNaN(projectsAmount11)) {
+    if (examMark11 < 0) {
+        console.log("You've entered negative value of the exam mark!");
+    } else if (examMark11 > 100) {
+        console.log("You've entered impossibly big value value of the exam mark!");
+    } else if (projectsAmount11 < 0) {
+        console.log("You've entered negative value of the projects' amount!");
+    } else if (projectsAmount11 % 1 != 0) {
+        console.log("You've entered not an integer value of the projects' amount!");
     } else {
-        if (avrgMark10 >= 9) {
-            console.log("Wow, you are a real gem!");
-        } else if (avrgMark10 >= 5) {
-            console.log("Not bad, but let's push some more!");
+        if (examMark11 > 90 || projectsAmount11 > 10) {
+            console.log(100);
+        } else if (examMark11 > 75 && projectsAmount11 >= 5) {
+            console.log(90);
+        } else if (examMark11 > 50 && projectsAmount11 >= 2) {
+            console.log(75);
         } else {
-            console.log("Twinkle, go study!");
+            console.log(0);
         }
     }
 } else {
