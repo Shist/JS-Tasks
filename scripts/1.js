@@ -52,9 +52,29 @@
 // (Не забывайте, что от пользователя мы всегда получаем строку).
 // Создайте переменную-результат и присвойте ей значение:
 // если введенное пользователем число меньше 5, то результат будет '0', если больше -  '1'. Выведите результат в консоль.
-let userNum7 = prompt("Enter the number:", 0);
-userNum7 = userNum7 === null ? 0 : userNum7;
-if (!isNaN(userNum7)) {
-  const result7 = (userNum7 < 5 ? '0' : '1');
-  console.log(result7);
+// let userNum7 = prompt("Enter the number:", 0);
+// userNum7 = userNum7 === null ? 0 : userNum7;
+// if (!isNaN(userNum7)) {
+//   const result7 = (userNum7 < 5 ? '0' : '1');
+//   console.log(result7);
+// }
+
+// Задание 8
+// Попросить пользователя ввести одно число, следом - второе число. Вывести в консоль максимальное из чисел (наибольшее) с текстом: 
+// Большее число: 7 (вместо 7 будет максимальное число из введенных пользователем).
+// * предусмотреть вариант ввода одинаковых чисел
+let firstUserNum8 = prompt("Enter the first number:", 0);
+firstUserNum8 = firstUserNum8 === null ? 0 : firstUserNum8;
+let secondUserNum8 = prompt("Enter the second number:", 0);
+secondUserNum8 = secondUserNum8 === null ? 0 : secondUserNum8;
+if (!isNaN(firstUserNum8) && !isNaN(secondUserNum8)) {
+  if (firstUserNum8 > secondUserNum8) {
+    console.log(`The greater number: ${firstUserNum8}`);
+  } else if (secondUserNum8 > firstUserNum8) {
+    console.log(`The greater number: ${secondUserNum8}`);
+  } else {
+    console.log(`The numbers ${firstUserNum8} and ${secondUserNum8} are equal!`);
+  }
+} else {
+    console.log("You've entered not nubmers!");
 }
