@@ -85,17 +85,41 @@
 //     console.log("You've entered not nubmers!");
 // }
 
-// Задание 9
-// Определить, является ли введенное пользователем число num1 кратным введенному числу num2.
-// Обе переменные запрашиваем у пользователя, ответ выводим в консоль.
-let firstNum9 = prompt("Enter the first number:", 0);
-firstNum9 = firstNum9 === null ? 0 : firstNum9;
-let secondNum9 = prompt("Enter the second number:", 0);
-secondNum9 = secondNum9 === null ? 0 : secondNum9;
-if (!isNaN(firstNum9) && !isNaN(secondNum9)) {
-  firstNum9 % secondNum9 === 0
-    ? console.log(`Yes, ${firstNum9} % ${secondNum9} == 0`)
-    : console.log(`No, ${firstNum9} % ${secondNum9} != 0`);
+// // Задание 9
+// // Определить, является ли введенное пользователем число num1 кратным введенному числу num2.
+// // Обе переменные запрашиваем у пользователя, ответ выводим в консоль.
+// let firstNum9 = prompt("Enter the first number:", 0);
+// firstNum9 = firstNum9 === null ? 0 : firstNum9;
+// let secondNum9 = prompt("Enter the second number:", 0);
+// secondNum9 = secondNum9 === null ? 0 : secondNum9;
+// if (!isNaN(firstNum9) && !isNaN(secondNum9)) {
+//   firstNum9 % secondNum9 === 0
+//     ? console.log(`Yes, ${firstNum9} % ${secondNum9} == 0`)
+//     : console.log(`No, ${firstNum9} % ${secondNum9} != 0`);
+// } else {
+//   console.log("You've entered not nubmers!");
+// }
+
+// Задание 10
+// Запросить у пользователя средний балл, записать в переменную.
+// Если средний балл 1-4 - вывести в консоль "Двоечник, иди учись!", если 5-8 - "Неплохо, но давай еще поднажмем!",
+// если 9-10 - "Ого, да ты настоящий отличник!" (можно другие фразы - по желанию).
+let avrgMark10 = prompt("Enter the average mark:", 0);
+avrgMark10 = avrgMark10 === null ? 0 : avrgMark10;
+if (!isNaN(avrgMark10)) {
+    if (avrgMark10 < 0) {
+        console.log("You've entered negative value of the mark! Minimum is 0.");
+    } else if (avrgMark10 > 10) {
+        console.log("You've entered impossibly big value of the mark! Maximum is 10.");
+    } else {
+        if (avrgMark10 >= 9) {
+            console.log("Wow, you are a real gem!");
+        } else if (avrgMark10 >= 5) {
+            console.log("Not bad, but let's push some more!");
+        } else {
+            console.log("Twinkle, go study!");
+        }
+    }
 } else {
-  console.log("You've entered not nubmers!");
+  console.log("You've entered not a nubmer!");
 }
