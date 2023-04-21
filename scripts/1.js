@@ -124,39 +124,69 @@
 //   console.log("You've entered not a nubmer!");
 // }
 
-// Задание 11
-// Запросить у пользователя ответы на 2 вопроса:
-// - балл за экзамен (от 0 до 100)
-// - количество выполненных проектов (от 0 и больше)
-// Вывести в консоль общий выпускной балл в соответствии с этими значениями:
-// - 100, если балл за экзамен более 90 или количество проектов более 10.
-// - 90, если балл за экзамен более 75 и количество проектов не менее 5.
-// - 75, если балл за экзамен более 50 и количество проектов не менее 2.
-// - 0 во всех других случаях.
-let examMark11 = prompt("Enter the exam mark:", 0);
-examMark11 = examMark11 === null ? 0 : examMark11;
-let projectsAmount11 = prompt("Enter the projects' amount:", 0);
-projectsAmount11 = projectsAmount11 === null ? 0 : projectsAmount11;
-if (!isNaN(examMark11) && !isNaN(projectsAmount11)) {
-    if (examMark11 < 0) {
-        console.log("You've entered negative value of the exam mark!");
-    } else if (examMark11 > 100) {
-        console.log("You've entered impossibly big value value of the exam mark!");
-    } else if (projectsAmount11 < 0) {
-        console.log("You've entered negative value of the projects' amount!");
-    } else if (projectsAmount11 % 1 != 0) {
-        console.log("You've entered not an integer value of the projects' amount!");
-    } else {
-        if (examMark11 > 90 || projectsAmount11 > 10) {
-            console.log(100);
-        } else if (examMark11 > 75 && projectsAmount11 >= 5) {
-            console.log(90);
-        } else if (examMark11 > 50 && projectsAmount11 >= 2) {
-            console.log(75);
-        } else {
-            console.log(0);
-        }
+// // Задание 11
+// // Запросить у пользователя ответы на 2 вопроса:
+// // - балл за экзамен (от 0 до 100)
+// // - количество выполненных проектов (от 0 и больше)
+// // Вывести в консоль общий выпускной балл в соответствии с этими значениями:
+// // - 100, если балл за экзамен более 90 или количество проектов более 10.
+// // - 90, если балл за экзамен более 75 и количество проектов не менее 5.
+// // - 75, если балл за экзамен более 50 и количество проектов не менее 2.
+// // - 0 во всех других случаях.
+// let examMark11 = prompt("Enter the exam mark:", 0);
+// examMark11 = examMark11 === null ? 0 : examMark11;
+// let projectsAmount11 = prompt("Enter the projects' amount:", 0);
+// projectsAmount11 = projectsAmount11 === null ? 0 : projectsAmount11;
+// if (!isNaN(examMark11) && !isNaN(projectsAmount11)) {
+//     if (examMark11 < 0) {
+//         console.log("You've entered negative value of the exam mark!");
+//     } else if (examMark11 > 100) {
+//         console.log("You've entered impossibly big value value of the exam mark!");
+//     } else if (projectsAmount11 < 0) {
+//         console.log("You've entered negative value of the projects' amount!");
+//     } else if (projectsAmount11 % 1 != 0) {
+//         console.log("You've entered not an integer value of the projects' amount!");
+//     } else {
+//         if (examMark11 > 90 || projectsAmount11 > 10) {
+//             console.log(100);
+//         } else if (examMark11 > 75 && projectsAmount11 >= 5) {
+//             console.log(90);
+//         } else if (examMark11 > 50 && projectsAmount11 >= 2) {
+//             console.log(75);
+//         } else {
+//             console.log(0);
+//         }
+//     }
+// } else {
+//   console.log("You've entered not a nubmer!");
+// }
+
+// Задание 12
+// День аренды автомобиля стоит $40. При аренде на 7 или больше дней вы получаете общую итоговую скидку $50.
+// Если вы арендуете авто на 3 или более дней, ваша общая скидка составит $20.
+// Количество дней, на которые нужно арендовать авто, запрашиваются с помощью prompt. Напишите программу,
+// рассчитывающую общую стоимость аренды на запрашиваемое количество дней.
+const rentDayCost12 = 40;
+const weekDiscount12 = 50;
+const weekDaysNum12 = 7;
+const threeDaysDiscount12 = 20;
+const threeDaysNum12 = 3;
+let userRentDays12 = prompt("Enter the whole amount of auto rent days:", 0);
+userRentDays12 = userRentDays12 === null ? 0 : userRentDays12;
+if (!isNaN(userRentDays12)) {
+  if (userRentDays12 % 1 != 0) {
+    console.log("You've entered not an integer value of the auto rent days!");
+  } else if (userRentDays12 < 0) {
+    console.log("You've entered negative value of of the auto rent days!");
+  } else {
+    let wholeRentCost12 = userRentDays12 * rentDayCost12;
+    if (userRentDays12 >= weekDaysNum12) {
+      wholeRentCost12 -= weekDiscount12;
+    } else if (userRentDays12 >= threeDaysNum12) {
+      wholeRentCost12 -= threeDaysDiscount12;
     }
+    console.log(`The whole rent cost: ${wholeRentCost12}`);
+  }
 } else {
   console.log("You've entered not a nubmer!");
 }
