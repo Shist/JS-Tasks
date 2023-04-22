@@ -79,6 +79,7 @@ if (isAmount(userAmount4)) {
 // Задание 5
 // Напишите программу, которая выводит в консоль числа от 1 до 100.
 // При этом вместо чисел, кратных трем, программа должна выводить слово «Fizz», а вместо чисел, кратных пяти, — слово «Buzz». Если число кратно и 3, и 5, то программа должна выводить слово «FizzBuzz»
+console.log("Task 5");
 for (let num = 1; num <= 100; num++) {
   if (num % 3 === 0 && num % 5 === 0) {
     console.log("FizzBuzz");
@@ -89,4 +90,17 @@ for (let num = 1; num <= 100; num++) {
   } else {
     console.log(num);
   }
+}
+
+// Задание 6
+// Перепишите код, заменив цикл for на while, без изменения поведения цикла.
+// for (let i = 0; i < 3; i++) {
+// alert( `number ${i}!` );
+// }
+console.log("Task 6");
+let i = 0;
+while (i < 3) {
+    alert(`number ${i}!`);
+    console.log(`number ${i}!`);
+    i++;
 }
