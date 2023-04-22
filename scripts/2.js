@@ -8,9 +8,9 @@
 // access = false;
 // }
 console.log("Task 1");
-let country = "Sweden";
-let access = country == "Sweden" ? true : false;
-console.log(access);
+let country1 = "Sweden";
+let access1 = country1 == "Sweden" ? true : false;
+console.log(access1);
 
 // Задание 2
 // Создать переменную и записать в нее число, например 10.
@@ -23,3 +23,19 @@ for (let i = 0; i < itersAmount2; i++) {
   num2++;
 }
 console.log(`The number after iterations: ${num2}`);
+
+// Задание 3
+// Увеличивая счетчик цикла на 2, нужно 5 раз:
+// - запрашивать у пользователя ввод числа
+// - проверять, равно ли это число 10. Если равно, выводить "Равно 10". Иначе выводить "Не равно 10"
+console.log("Task 3");
+for (let i = 0; i < 10; i += 2) {
+    let userNum3 = Number(prompt("Enter your number:"));
+    if (userNum3 === 10) {
+        alert("Equal to 10");
+        console.log(`Number ${userNum3} is equal to 10`);
+    } else {
+        alert("Not equal to 10");
+        console.log(`Number ${userNum3} is not equal to 10`);
+    }
+}
