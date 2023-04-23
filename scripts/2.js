@@ -122,3 +122,28 @@ const userAmount7 = Number(
   prompt("How many numbers' squares you want to calculate?", 1)
 );
 printNumsSquares(userAmount7);
+
+// Задание 8
+// Написать функцию, котрая возвращает строку - случайный цвет в формате rgb. Это будет строка вида "rgb(10,55,250)"
+// Здесь у вас будет две функции: одна ваша - getRandomRGB, а вторая - функция получения случайного числа в диапазоне min - max.
+// Вот эта функция (просто скопируйте, она уже готова):
+// function getRandomInteger(min, max) {
+// return Math.floor(Math.random() * (max - min)) + min;
+// }
+// Подсказка:
+// Каждый цвет - 3 числа, каждое число лежит в диапазоне от 0 до 255.
+// Одна функция может вызывать другую функцию
+console.log("Task 8");
+
+function getRandomInteger(min, max) {
+  return Math.round(Math.random() * (max - min)) + min; // Переписал floor на round
+}
+
+function getRandomRGB() {
+  const R = getRandomInteger(0, 255);
+  const G = getRandomInteger(0, 255);
+  const B = getRandomInteger(0, 255);
+  return `rgb(${R}, ${G}, ${B})`;
+}
+
+console.log(`Generated random color: ${getRandomRGB()}`);
