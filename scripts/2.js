@@ -100,7 +100,25 @@ for (let num = 1; num <= 100; num++) {
 console.log("Task 6");
 let i = 0;
 while (i < 3) {
-    alert(`number ${i}!`);
-    console.log(`number ${i}!`);
-    i++;
+  alert(`number ${i}!`);
+  console.log(`number ${i}!`);
+  i++;
 }
+
+// Задание 7
+// Переписать задание 4 в виде функции. Т.е. описать функцию, которая
+// выводит квадраты чисел из заданного диапазона (диапазон будет попадать в функцию как аргументы).
+console.log("Task 7");
+
+function printNumsSquares(amount) {
+  if (isAmount(amount)) {
+    for (let i = 0; i < amount; i++) {
+      console.log(i ** 2);
+    }
+  }
+}
+
+const userAmount7 = Number(
+  prompt("How many numbers' squares you want to calculate?", 1)
+);
+printNumsSquares(userAmount7);
