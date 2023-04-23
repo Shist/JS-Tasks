@@ -147,3 +147,27 @@ function getRandomRGB() {
 }
 
 console.log(`Generated random color: ${getRandomRGB()}`);
+
+// Задание 9
+// Написать функцию, которая принимает целое число n.
+// Внутри функции запустить цикл от 1 до n с шагом 0.5. На каждой итерации цикла выводить
+// в консоль текущее число (i) и информацию о том, целое ли оно.
+// Такая функция не будет ничего возвращать, она просто выводит информацию в консоль.
+// Пример, при запуске функции с параметром 3:
+// "1 integer"
+// "1.5 decimal"
+// "2 integer"
+// "2.5 decimal"
+console.log("Task 9");
+
+function foo(n) {
+  if (isAmount(n)) {
+    for (let i = 1; i < n; i += 0.5) {
+      console.log(`${i} ${i % 1 === 0 ? "integer" : "decimal"}`);
+    }
+  }
+}
+
+const amountForFoo9 = 7;
+console.log(`The result of function (n = ${amountForFoo9}) :`);
+foo(amountForFoo9);
