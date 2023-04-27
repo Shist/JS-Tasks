@@ -28,3 +28,22 @@ console.log(`isInRangeAnd(15, 5, 10) - ${isInRangeAnd(15, 5, 10)}`);
 console.log(`isInRangeOr(2, 5, 10) - ${isInRangeOr(2, 5, 10)}`);
 console.log(`isInRangeOr(7, 5, 10) - ${isInRangeOr(7, 5, 10)}`);
 console.log(`isInRangeOr(15, 5, 10) - ${isInRangeOr(15, 5, 10)}`);
+
+// Задание 2
+// Есть объект с именами и заработными платами инженеров:
+// const engineers = {
+// Den: 1000,
+// Matt: 5000,
+// Steve: 2000
+// }
+// Вывести в консоль через шаблонные строки заработную плату всех работников в таком формате:
+// Заработная плата ххх составляет ххх рублей.
+console.log("Task 2");
+const engineers = {
+  Den: 1000,
+  Matt: 5000,
+  Steve: 2000,
+};
+for (let property in engineers) {
+  console.log(`Заработная плата ${property} составляет ${engineers[property]} рублей.`);
+}
