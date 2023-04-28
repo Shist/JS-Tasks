@@ -53,6 +53,7 @@ for (let property in engineers) {
 // Задание 3
 // Создать массив из 5 элементов.
 // Используя цикл for, вывести каждый второй элемент массива в консоль.
+console.log("Task 3");
 const arr = ["ab", 34, "cd", 72, "ef"];
 for (let i = 0; i < arr.length; i++) {
   if (i % 2 === 1) {
@@ -67,7 +68,39 @@ for (let i = 0; i < arr.length; i++) {
 // Индексу 0 соответствует число 42
 // Индексу 1 соответствует число 65
 // и т.д.
+console.log("Task 4");
 let numbers = [42, 65, 49, 68, 56, 47, 70, 42, 51, 35, 58, 63, 40, 70];
 numbers.forEach((item, i) => {
   console.log(`Индексу ${i} соответствует число ${numbers[i]}`);
 });
+
+// Задание 5
+// Дан массив объектов, например:
+// let questions = [{
+//     question: "What's the currency of the USA?",
+//     choices: ["US dollar", "Ruble", "Horses", "Gold"],
+//     corAnswer: 0
+// }, {
+//     question: "Where was the American Declaration of Independence signed?",
+//     choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
+//     corAnswer: 0
+// }];
+// Добавить в каждый объект дополнительное поле usersAnswer со значением null.
+// Решение должно работать для массива любой длины.
+console.log("Task 5");
+let questions = [
+  {
+    question: "What's the currency of the USA?",
+    choices: ["US dollar", "Ruble", "Horses", "Gold"],
+    corAnswer: 0,
+  },
+  {
+    question: "Where was the American Declaration of Independence signed?",
+    choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
+    corAnswer: 0,
+  },
+];
+questions.forEach((item) => {
+  item.usersAnswer = null;
+});
+console.log(questions);
