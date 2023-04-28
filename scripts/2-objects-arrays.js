@@ -45,5 +45,17 @@ const engineers = {
   Steve: 2000,
 };
 for (let property in engineers) {
-  console.log(`Заработная плата ${property} составляет ${engineers[property]} рублей.`);
+  console.log(
+    `Заработная плата ${property} составляет ${engineers[property]} рублей.`
+  );
+}
+
+// Задание 3
+// Создать массив из 5 элементов.
+// Используя цикл for, вывести каждый второй элемент массива в консоль.
+const arr = ["ab", 34, "cd", 72, "ef"];
+for (let i = 0; i < arr.length; i++) {
+  if (i % 2 === 1) {
+    console.log(`arr[${i}] = ${arr[i]}`);
+  }
 }
