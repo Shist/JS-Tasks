@@ -149,7 +149,9 @@ console.log("Task 7");
 let arrTask7 = [5, 4, 3, -3, -10, -1, 8, -20, 0];
 console.log(`Исходный массив:\n${arrTask7}`);
 let positiveArr = [];
-arrTask7.forEach((item) => { item > 0 ? positiveArr.push(item) : null });
+arrTask7.forEach((item) => {
+  item > 0 ? positiveArr.push(item) : null;
+});
 console.log(`Массив только с положительными элементами:\n${positiveArr}`);
 
 // Задание 8
@@ -157,15 +159,39 @@ console.log(`Массив только с положительными элем�
 // Функция должна создать новый массив из элементов массива array, и в этом новом массиве должны содержаться только элементы, больше и равные (>=) значению num.
 console.log("Task 8");
 
-function foo (arr, num) {
+function foo(arr, num) {
   let newArr = [];
   arr.forEach((item) => {
     item >= num ? newArr.push(item) : null;
-  })
+  });
   return newArr;
 }
 
 someArr = [2, 5, 7, 8, 10, 12, 19];
 console.log(`Исходный массив:\n${someArr}`);
 someNum = 8;
-console.log(`Новый массив (все элементы >= ${someNum}):\n${foo(someArr, someNum)}`);
+console.log(
+  `Новый массив (все элементы >= ${someNum}):\n${foo(someArr, someNum)}`
+);
+
+// Задание 9
+// Существует массив пользователей, например:
+// const users = [{name: 'Vasya', age: 23}, {name: 'Olya', age: 12}, {name: 'Anna', age: 22}, {name: 'Alex', age: 18}, {name: 'Valery', age: 8}]
+// Пройти в цикле по массиву и вывести имена всех пользователей, возраст которых больше 15.
+console.log("Task 9");
+const users = [
+  { name: "Vasya", age: 23 },
+  { name: "Olya", age: 12 },
+  { name: "Anna", age: 22 },
+  { name: "Alex", age: 18 },
+  { name: "Valery", age: 8 },
+];
+console.log("Исходный массив:");
+users.forEach((item, i) => {
+  console.log(`arr[${i}] = { name: "${item.name}", age: ${item.age} }`);
+});
+ageNum = 15;
+console.log(`Имена пользователей, возраст которых больше ${ageNum}:`);
+users.forEach((item) => {
+  item.age > ageNum ? console.log(item.name) : null;
+});
