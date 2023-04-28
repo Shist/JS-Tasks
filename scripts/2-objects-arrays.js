@@ -151,3 +151,21 @@ console.log(`Исходный массив:\n${arrTask7}`);
 let positiveArr = [];
 arrTask7.forEach((item) => { item > 0 ? positiveArr.push(item) : null });
 console.log(`Массив только с положительными элементами:\n${positiveArr}`);
+
+// Задание 8
+// Написать функцию, которая принимает массив (array) и число (num).
+// Функция должна создать новый массив из элементов массива array, и в этом новом массиве должны содержаться только элементы, больше и равные (>=) значению num.
+console.log("Task 8");
+
+function foo (arr, num) {
+  let newArr = [];
+  arr.forEach((item) => {
+    item >= num ? newArr.push(item) : null;
+  })
+  return newArr;
+}
+
+someArr = [2, 5, 7, 8, 10, 12, 19];
+console.log(`Исходный массив:\n${someArr}`);
+someNum = 8;
+console.log(`Новый массив (все элементы >= ${someNum}):\n${foo(someArr, someNum)}`);
