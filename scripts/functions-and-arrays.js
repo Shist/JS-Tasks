@@ -103,3 +103,15 @@ const filterFor = (arr, a) => {
 console.log(
   `filterFor([${arr}], ${targetNum}) = [${filterFor(arr, targetNum)}]`
 );
+
+// Задание 5
+// Напишите функцию copyArr(arr), которая копирует массив, не изменяя оригинал. Используйте подходящий метод массива.
+console.log("Task 5");
+
+const copyArr = (arr) => {
+  return arr.map((item) => item);
+};
+
+const someArr = [4, 5, 8, 9];
+const arrCopy = copyArr(someArr);
+console.log(`copyArr([${someArr}]) = [${arrCopy}]`);
