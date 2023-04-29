@@ -35,11 +35,51 @@ console.log(`Результат работы sumNums():\n${sumNums()}`);
 // square()
 // // ДО: NaN
 // // ПОСЛЕ: Uncaught Error: Функция "square" не может быть вызвана без аргумента
+console.log("Task 2");
+
 function square(a) {
   if (arguments.length === 0) {
     throw 'Функция "square" не может быть вызвана без аргумента';
   }
   console.log(a * a);
 }
+
 square(10);
 square();
+
+// Задание 3
+// Создать функцию "угадай число". Она принимает число от 1 до 10 (обязательно проверить, что число не больше 10 и не меньше 0). Генерирует рандомное число от 1 до 10 и сравнивает с заданным числом.
+// Если они совпали, то возвращает “Вы выиграли”, если нет - то “Вы не угадали, ваше число -  ...,  а выпало число ...”
+// Функция создания случайного числа уже была ранее в материалах, в задаче по созданию случайного цвета.
+// Написать функцию в стрелочном синтаксисе.
+console.log("Task 3");
+
+const guessNum = (num) => {
+  if (typeof num !== "number") {
+    return `${num} не является числом!`;
+  }
+  if (num < 1) {
+    return `Ваше число ${num} меньше единицы!`;
+  }
+  if (num > 10) {
+    return `Ваше число ${num} больше десяти!`;
+  }
+  if (num % 1 !== 0) {
+    return `Ваше число ${num} не является целым!`;
+  }
+  const randNum = Math.round(Math.random() * 9) + 1;
+  if (num === randNum) {
+    return "Вы выиграли";
+  } else {
+    return `Вы не угадали, ваше число -  ${num}, а выпало число ${randNum}`;
+  }
+};
+
+console.log(guessNum("abc"));
+console.log(guessNum([1, 2, 3]));
+console.log(guessNum({ name: null }));
+console.log(guessNum(false));
+console.log(guessNum(0));
+console.log(guessNum(10.5));
+console.log(guessNum(5.75));
+console.log(guessNum(5));
