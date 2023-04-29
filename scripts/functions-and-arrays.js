@@ -115,3 +115,37 @@ const copyArr = (arr) => {
 const someArr = [4, 5, 8, 9];
 const arrCopy = copyArr(someArr);
 console.log(`copyArr([${someArr}]) = [${arrCopy}]`);
+
+// Задание 6
+// Создайте функцию sumObjectValues, которая будет суммировать все значения свойств, которые являются числами. Сумму чисел необходимо вернуть из функции.
+// Проверить работу функции можно на объекте:
+// const objectWithNumbers = {
+//   a: 10,
+//   b: 20,
+//   c: 'string',
+//   d: 12,
+// }
+console.log("Task 6");
+
+const sumObjectValues = (obj) => {
+  if (typeof obj !== "object") {
+    throw "Ошибка! Функция sumObjectValues(obj) должна принимать в себя объект!";
+  }
+  let sum = 0;
+  for (key in obj) {
+    typeof obj[key] === "number" ? (sum += obj[key]) : null;
+  }
+  return sum;
+};
+
+const objectWithNumbers = {
+  a: 10,
+  b: 20,
+  c: "string",
+  d: 12,
+};
+console.log(
+  `sumObjectsValues ( objectWithNumbers ) = ${sumObjectValues(
+    objectWithNumbers
+  )}`
+);
