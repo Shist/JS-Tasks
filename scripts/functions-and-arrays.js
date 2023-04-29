@@ -83,3 +83,23 @@ console.log(guessNum(0));
 console.log(guessNum(10.5));
 console.log(guessNum(5.75));
 console.log(guessNum(5));
+
+// Задание 4
+// Определить массив, например let arr = [5, 4, 3, 8, 0];
+// Создать функцию filterFor(arr, a). Функция должна вернуть новый массив из элементов arr, но в нем должны содержаться элементы, которые больше или равны (>=) значения переменной a.
+// Например, запуск функции filterFor(arr, 5) дает результат [5,8]
+// запуск функции filterFor(arr, 10) дает результат []
+// запуск функции filterFor(arr, 3.11) дает результат [4,5,8]
+console.log("Task 4");
+const arr = [5, 4, 3, 8, 0];
+const targetNum = 4;
+
+const filterFor = (arr, a) => {
+  const newArr = [];
+  arr.forEach((item) => (item >= a ? newArr.push(item) : null));
+  return newArr;
+};
+
+console.log(
+  `filterFor([${arr}], ${targetNum}) = [${filterFor(arr, targetNum)}]`
+);
