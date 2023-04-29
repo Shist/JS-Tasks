@@ -24,3 +24,22 @@ console.log(`Результат работы sumNums('d', 4):\n${sumNums("d", 4)
 console.log(`Результат работы sumNums(1, [2]):\n${sumNums(1, [2])}`);
 console.log(`Результат работы sumNums(1):\n${sumNums(1)}`);
 console.log(`Результат работы sumNums():\n${sumNums()}`);
+
+// Задание 2
+// Измените функцию "square" так, чтобы в случае ее вызова без аргумента генерировалась консольная ошибка
+// "Функция "square" не может быть вызвана без аргумента"
+// function square(a) {
+//   console.log(a * a)
+// }
+// square(10) // 100
+// square()
+// // ДО: NaN
+// // ПОСЛЕ: Uncaught Error: Функция "square" не может быть вызвана без аргумента
+function square(a) {
+  if (arguments.length === 0) {
+    throw 'Функция "square" не может быть вызвана без аргумента';
+  }
+  console.log(a * a);
+}
+square(10);
+square();
