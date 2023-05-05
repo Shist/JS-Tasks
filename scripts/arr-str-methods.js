@@ -36,3 +36,29 @@ const reverseStr = (str) => str.split("").reverse().join("");
 console.log(`reverseStr("привет Женя") = ${reverseStr("привет Женя")}`);
 console.log(`reverseStr("Hello World!") = ${reverseStr("Hello World!")}`);
 console.log(`reverseStr("abc123") = ${reverseStr("abc123")}`);
+
+// Задание 4
+// Массив содержит строки с информацией о железнодорожных станциях на севере Англии. Строки представляют собой трёхбуквенный код станции, затем некоторые машиночитаемые данные, за которыми следует точка с запятой, а затем название станции, пригодное для чтения человеком.
+// let stations = [
+// 'MAN675847583748sjt567654;Manchester Piccadilly',
+// 'GNF576746573fhdg4737dh4;Greenfield',
+// 'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+// 'SYB4f65hf75f736463;Stalybridge',
+// 'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'
+// ];
+// Необходимо извлечь код станции и имя и поместить их в строку со следующей структурой:
+// MAN: Manchester Piccadilly
+// Вывести эти строки в консоль
+console.log("Task 4");
+
+const stations = [
+  "MAN675847583748sjt567654;Manchester Piccadilly",
+  "GNF576746573fhdg4737dh4;Greenfield",
+  "LIV5hg65hd737456236dch46dg4;Liverpool Lime Street",
+  "SYB4f65hf75f736463;Stalybridge",
+  "HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield",
+];
+
+stations.forEach((item) => {
+  console.log(`${item.slice(0, 3)}: ${item.slice(item.indexOf(";") + 1)}`);
+});
