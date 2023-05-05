@@ -22,6 +22,17 @@ const checkSpam = (str) =>
     ? true
     : false;
 
-    console.log(`checkSpam("abcbAdWoRdabc") = ${checkSpam("abcbAdWoRdabc")}`);
-    console.log(`checkSpam("abcxXxabc") = ${checkSpam("abcxXxabc")}`);
-    console.log(`checkSpam("xbadxwordx") = ${checkSpam("xbadxwordx")}`);
+console.log(`checkSpam("abcbAdWoRdabc") = ${checkSpam("abcbAdWoRdabc")}`);
+console.log(`checkSpam("abcxXxabc") = ${checkSpam("abcxXxabc")}`);
+console.log(`checkSpam("xbadxwordx") = ${checkSpam("xbadxwordx")}`);
+
+// Задание 3
+// Написать функцию, которой на вход подается строка, на выход она дает символы наоборот (разворачивает строку). Пример: «привет Женя» -> «янеЖ тевирп»
+// Обратите внимание: метод reverse существует только у массивов.
+console.log("Task 3");
+
+const reverseStr = (str) => str.split("").reverse().join("");
+
+console.log(`reverseStr("привет Женя") = ${reverseStr("привет Женя")}`);
+console.log(`reverseStr("Hello World!") = ${reverseStr("Hello World!")}`);
+console.log(`reverseStr("abc123") = ${reverseStr("abc123")}`);
