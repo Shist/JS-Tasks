@@ -62,3 +62,46 @@ const stations = [
 stations.forEach((item) => {
   console.log(`${item.slice(0, 3)}: ${item.slice(item.indexOf(";") + 1)}`);
 });
+
+// Задание 5
+// Напишите функцию unique(arr), которая принимает массив, а возвращает новый массив, содержащий только уникальные элементы arr.
+// Пример:
+// let strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-O"];
+// console.log(unique(strings) ); должен вывести "кришна, харе, :-O"
+// ПОДСКАЗКА
+// - создать новый массив
+// - обойти исходный массив, если элемент отсутствует в новом - добавлять его в новый. Таким образом в новый добавятся только уникальные.
+console.log("Task 5");
+const strings = [
+  "кришна",
+  "кришна",
+  "харе",
+  "харе",
+  "харе",
+  "харе",
+  "кришна",
+  "кришна",
+  ":-O",
+];
+
+// Способ №1
+const unique = (arr) => {
+  const newArr = [];
+  arr.forEach((item) => {
+    newArr.includes(item) ? null : newArr.push(item);
+  });
+  return newArr;
+};
+
+// Способ №2
+const uniqueWithSet = (arr) => {
+  const newArr = new Set();
+  arr.forEach((item) => {
+    newArr.add(item);
+  });
+  return [...newArr];
+};
+
+console.log(`strings = ["${strings.join('", "')}"]`);
+console.log(`unique(strings) = "${unique(strings).join(", ")}"`);
+console.log(`uniqueWithSet(strings) = "${uniqueWithSet(strings).join(", ")}"`);
