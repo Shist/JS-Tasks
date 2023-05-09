@@ -37,18 +37,35 @@ lu.forEach((item) => {
 // Задание 4 (задание 3 почему-то отсутствует)
 // Создать с помощью js абзац (тег p). Добавить в него контент. Добавить к нему стили: размер 36px, жирный шрифт. Добавить абзац с текстом на страницу.
 console.log("Task 4");
-const someP = document.createElement('p');
-someP.classList.add('lorem'); // Добавляем класс из подключенной библиотеки с лоремом
-someP.classList.add('15'); // Добавляем класс, который сделает нам 15 слов в параграфе
-someP.style.fontSize = '36px';
+const someP = document.createElement("p");
+someP.classList.add("lorem"); // Добавляем класс из подключенной библиотеки с лоремом
+someP.classList.add("15"); // Добавляем класс, который сделает нам 15 слов в параграфе
+someP.style.fontSize = "36px";
 someP.style.fontWeight = 700; // Тоже самое, что 'bold'
 document.body.appendChild(someP);
 
 // Задание 5
-// Написать в html тег заголовка с текстом "Сегодня:" 
+// Написать в html тег заголовка с текстом "Сегодня:"
 // После заголовка подготовить в html пустой параграф. С помощью js добавить в него сегодняшнюю дату.
 console.log("Task 5");
 const t5p = document.querySelectorAll("p.task-5");
-t5p.forEach((item) => { // На всякий случай делаем это для Всех потенциально найденных p-шек класса .task-5
-    item.innerText = new Date();
+t5p.forEach((item) => {
+  // На всякий случай делаем это для Всех потенциально найденных p-шек класса .task-5
+  item.innerText = new Date();
 });
+
+// Задание 6
+// Написать функцию, которая принимает на вход 3 параметра: название тега, название цвета, содержимое. Функция должна сформировать необходимый тег,
+// добавить необходимый стиль с цветом и внести содержимое. Вывести несколько таких сгенерированных тегов в консоль, затем отправить их на страницу.
+console.log("Task 5");
+
+const foo6 = (tag, color, content) => {
+  const newItem = document.createElement(tag);
+  newItem.style.color = color;
+  newItem.innerText = content;
+  return newItem;
+};
+
+document.body.appendChild(foo6("h3", "red", "abc"));
+document.body.appendChild(foo6("span", "green", "def"));
+document.body.appendChild(foo6("a", "orange", "ghj"));
