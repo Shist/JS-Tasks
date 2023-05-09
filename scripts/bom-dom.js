@@ -154,3 +154,19 @@ linksArr.forEach((siteUrl) => {
   newDiv.appendChild(newA);
 });
 document.body.appendChild(newDiv);
+
+// Задание 10
+// Добавить к нескольким тегам на странице класс "forRemove". Далее написать JS код, который найдет в HTML все элементы с классом "forRemove" и удалит их.
+// ПОДСКАЗКА Для удаления DOM-элементов можно использовать метод element.remove().
+// ВАЖНО: Вам нужно удалять не всю коллекцию li, а каждый отдльный li
+console.log("Task 10");
+const t10liCollection = document.querySelectorAll("li.task-10");
+t10liCollection.forEach((li, index) => {
+  if (index % 2 == 1) {
+    li.classList.add("forRemove");
+  }
+});
+const objsToRemove = document.querySelectorAll(".forRemove");
+objsToRemove.forEach((objToRemove) => {
+  objToRemove.remove();
+});
