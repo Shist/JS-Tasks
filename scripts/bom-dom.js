@@ -170,3 +170,55 @@ const objsToRemove = document.querySelectorAll(".forRemove");
 objsToRemove.forEach((objToRemove) => {
   objToRemove.remove();
 });
+
+// Задание 11*
+// Создать массив объектов с полями name, age. Например:
+// const users = [
+// {name: 'Mark', age: 12},
+// {name: 'Olga', age: 30},
+// {name:'Tom', age: 25},
+// {name:'Den', age: 43}
+// ]
+// Создать в html таблицу (table).
+// C помощью js заполнить таблицу информацией из массива, в одной колонке будут имена, во второй возраст. Имена должны быть красного цвета, age - синего.
+// ПОДСКАЗКА, Таблица состоит из строк (tr) и ячеек (td) внутри этих строк. Строк должно создаваться столько, сколько объектов внутри массива, и их количество может быть любым.
+console.log("Task 11");
+const users = [
+  { name: "Mark", age: 12 },
+  { name: "Olga", age: 30 },
+  { name: "Tom", age: 25 },
+  { name: "Den", age: 43 },
+];
+const newTable = document.createElement("table");
+newTable.border = 2;
+newTable.align = "center";
+newTable.width = 500;
+const newTableHead = document.createElement("thead");
+const newTableHeadRow = document.createElement("tr");
+const newTableHeadName = document.createElement("th");
+newTableHeadName.innerText = "Name";
+newTableHeadName.fontWeight = "bold";
+newTableHeadRow.appendChild(newTableHeadName);
+const newTableHeadAge = document.createElement("th");
+newTableHeadAge.innerText = "Age";
+newTableHeadAge.fontWeight = "bold";
+newTableHeadRow.appendChild(newTableHeadAge);
+newTableHead.appendChild(newTableHeadRow);
+newTable.appendChild(newTableHead);
+const newTableBody = document.createElement("tbody");
+users.forEach((user) => {
+  newTr = document.createElement("tr");
+  newTdName = document.createElement("td");
+  newTdName.innerText = user.name;
+  newTdName.style.color = "red";
+  newTdName.align = "center";
+  newTr.appendChild(newTdName);
+  newTdAge = document.createElement("td");
+  newTdAge.innerText = user.age;
+  newTdAge.style.color = "blue";
+  newTdAge.align = "center";
+  newTr.appendChild(newTdAge);
+  newTableBody.appendChild(newTr);
+});
+newTable.appendChild(newTableBody);
+document.body.appendChild(newTable);
