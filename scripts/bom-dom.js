@@ -57,7 +57,7 @@ t5p.forEach((item) => {
 // Задание 6
 // Написать функцию, которая принимает на вход 3 параметра: название тега, название цвета, содержимое. Функция должна сформировать необходимый тег,
 // добавить необходимый стиль с цветом и внести содержимое. Вывести несколько таких сгенерированных тегов в консоль, затем отправить их на страницу.
-console.log("Task 5");
+console.log("Task 6");
 
 const foo6 = (tag, color, content) => {
   const newItem = document.createElement(tag);
@@ -69,3 +69,16 @@ const foo6 = (tag, color, content) => {
 document.body.appendChild(foo6("h3", "red", "abc"));
 document.body.appendChild(foo6("span", "green", "def"));
 document.body.appendChild(foo6("a", "orange", "ghj"));
+
+// Задание 7
+// Вставить в страницу (в html документ) тег <select>. С помощью js (в цикле) добавить в этот select опции (option) под годы от 1960 по 2020.
+console.log("Task 7");
+
+const selectObj = document.createElement("select");
+selectObj.classList.add("task-7"); // На всякий случай
+for (let year = 1960; year <= 2020; year++) {
+  const newOption = document.createElement("option");
+  newOption.innerText = year;
+  selectObj.options.add(newOption);
+}
+document.body.appendChild(selectObj);
