@@ -82,3 +82,39 @@ for (let year = 1960; year <= 2020; year++) {
   selectObj.options.add(newOption);
 }
 document.body.appendChild(selectObj);
+
+// Задание 8
+// Вставить в страницу (в html документ) ul.
+// Предусмотреть в коде следующий массив:
+// const clients = [
+// {name: "Женя", order: true},
+// {name: "Кристина", order: true},
+// {name: "Павел", order: false},
+// {name: "Виолетта", order: false},
+// {name: "Костя", order: true}
+// ]
+// Перебирать массив, для каждого элемента массива создать li, наполнить li текстом:
+// - Клиент Женя оплатил заказ
+// - Клиент Павел отменил заказ
+// ... остальные li с контентом
+// Маска получается такой: "Клиент ИМЯ СТАТУС заказ", где имя - свойство объекта (а объект здесь - это текущая ячейка массива), статус зависит от от свойства order: если true – то оплатил, если false – то отменил.
+console.log("Task 8");
+const clients = [
+  { name: "Женя", order: true },
+  { name: "Кристина", order: true },
+  { name: "Павел", order: false },
+  { name: "Виолетта", order: false },
+  { name: "Костя", order: true },
+];
+const t8ul = document.querySelectorAll("ul.task-8");
+clients.forEach((item) => {
+  const newLi = document.createElement("li");
+  newLi.classList.add("task-8"); // На всякий случай
+  newLi.innerText = `Клиент ${item.name} ${
+    item.order ? "оплатил" : "отменил"
+  } заказ`;
+  // На случай, если у нас вдруг будет не один, а много ul из класса task-8
+  t8ul.forEach((ul) => {
+    ul.appendChild(newLi);
+  });
+});
