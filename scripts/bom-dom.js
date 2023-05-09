@@ -118,3 +118,39 @@ clients.forEach((item) => {
     ul.appendChild(newLi);
   });
 });
+
+// Задание 9
+// Есть массив ссылок:
+// let linksArr = ['https://www.amazon.com/', 'https://www.youtube.com/', 'https://devby.io/', 'https://www.google.com/', 'https://apple.com/'];
+// Вам нужно:
+// 1) при помощи JS создать DIV, задать ему css стили (фон, паддинги)
+// 2) при помощи цикла пройтись по массиву 'linksArr', для каждого из элементов массива сформировать ссылку (тег
+// c атрибутом href и текстом из массива) и добавить эту ссылку в созданный DIV из пункта 1
+// При нажатии на ссылки адреса должны открываться в новой вкладке (атрибут target="_blank")
+// ПОДСКАЗКА. Для создания атрибута используется js метод setAttribute:
+// element.setAttribute(name, value) - где element - сам элемент, которому назначаем атрибут, name - атрибут, который нужно добавить, value - его значение. Также для стандартных атрибутов существуют свойства, и их можно добавлять напрямую: напр. img.src = ''
+// Вкладывать ссылки в див нужно с помощью метода appendChild или append.
+// 3) Добавить DIV из пункта 1 (со ссылками внутри ) в BODY
+console.log("Task 9");
+const linksArr = [
+  "https://www.amazon.com/",
+  "https://www.youtube.com/",
+  "https://devby.io/",
+  "https://www.google.com/",
+  "https://apple.com/",
+];
+const newDiv = document.createElement("div");
+newDiv.classList.add("task-9"); // На всякий случай
+newDiv.style.background = "yellow";
+newDiv.style.padding = "20px";
+newDiv.style.display = "flex";
+newDiv.style.flexDirection = "column";
+linksArr.forEach((siteUrl) => {
+  const newA = document.createElement("a");
+  newA.classList.add("task-9"); // На всякий случай
+  newA.innerText = siteUrl;
+  newA.href = siteUrl;
+  newA.target = "_blank";
+  newDiv.appendChild(newA);
+});
+document.body.appendChild(newDiv);
