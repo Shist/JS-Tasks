@@ -33,3 +33,12 @@ const lu = document.querySelectorAll("li");
 lu.forEach((item) => {
   console.log(item.innerText);
 });
+
+// Задание 4 (задание 3 почему-то отсутствует)
+// Создать с помощью js абзац (тег p). Добавить в него контент. Добавить к нему стили: размер 36px, жирный шрифт. Добавить абзац с текстом на страницу.
+const someP = document.createElement('p');
+someP.classList.add('lorem'); // Добавляем класс из подключенной библиотеки с лоремом
+someP.classList.add('15'); // Добавляем класс, который сделает нам 15 слов в параграфе
+someP.style.fontSize = '36px';
+someP.style.fontWeight = 700; // Тоже самое, что 'bold'
+document.body.appendChild(someP);
