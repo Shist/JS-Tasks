@@ -18,3 +18,17 @@ const inputT2 = document.querySelector("input.task-2");
 inputT2.addEventListener("keyup", () => {
   console.log(inputT2.value);
 });
+
+// Задание 3
+// Создать в html форму с инпутом и кнопкой. Также добавить в html тег ul. Когда форма отправляется, добавлять в список тег li.
+// Его содержимое - введенный текст (input.value). После отправки формы инпут должен быть очищен (проставить пустую строку в value).
+console.log("Task 3");
+const inputT3 = document.querySelector("input.task-3");
+const btnT3 = document.querySelector("button.task-3");
+const ulT3 = document.querySelector("ul.task-3");
+btnT3.addEventListener("click", () => {
+  const newLi = document.createElement("li");
+  newLi.innerText = inputT3.value;
+  ulT3.appendChild(newLi);
+  inputT3.value = "";
+});
