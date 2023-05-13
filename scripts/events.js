@@ -77,10 +77,10 @@ formT4.addEventListener("submit", (event) => {
 console.log("Task 5");
 const btnT5 = document.querySelector("button.task-5");
 btnT5.addEventListener("mouseenter", () => {
-  btnT5.style.backgroundColor = `#${Math.floor(
+  btnT5.style.backgroundColor = `#${Math.round(
     Math.random() * 16777215
   ).toString(16)}`;
-  btnT5.style.color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  btnT5.style.color = `#${Math.round(Math.random() * 16777215).toString(16)}`;
 });
 btnT5.addEventListener("mouseleave", () => {
   btnT5.style.transform = `rotate(${Math.round(Math.random() * 360) - 180}deg)`;
