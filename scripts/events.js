@@ -23,12 +23,51 @@ inputT2.addEventListener("keyup", () => {
 // Создать в html форму с инпутом и кнопкой. Также добавить в html тег ul. Когда форма отправляется, добавлять в список тег li.
 // Его содержимое - введенный текст (input.value). После отправки формы инпут должен быть очищен (проставить пустую строку в value).
 console.log("Task 3");
+const formT3 = document.querySelector("form.task-3");
 const inputT3 = document.querySelector("input.task-3");
-const btnT3 = document.querySelector("button.task-3");
 const ulT3 = document.querySelector("ul.task-3");
-btnT3.addEventListener("click", () => {
+formT3.addEventListener("submit", (event) => {
+  event.preventDefault();
   const newLi = document.createElement("li");
   newLi.innerText = inputT3.value;
   ulT3.appendChild(newLi);
   inputT3.value = "";
+});
+
+// Задание 4
+// Калькулятор.
+// Создать в html форму с текстовым input, тегом select, вторым текстовым input и кнопкой. Добавить в html div.
+// Внутри select будут options - арифметические знаки. В оба инпута пользователь вводит число.
+// Когда пользователь отправляет форму (событие submit), над двумя числами выполняется действие,
+// выбранное в select (чтобы получить выбранный пользователем option, мы "забираем" значение  select.value). Результат отображается в div.
+// 1) решить с помощью if
+// 2) решить с помощью evel (https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/eval)
+console.log("Task 4");
+const formT4 = document.querySelector("form.task-4");
+const inputFirstT4 = document.querySelector("input.task-4-input-1");
+const selectT4 = document.querySelector("select.task-4");
+const inputSecondT4 = document.querySelector("input.task-4-input-2");
+const divT4 = document.querySelector("div.task-4");
+formT4.addEventListener("submit", (event) => {
+  event.preventDefault();
+  switch (selectT4.value) {
+    case "+":
+      divT4.innerText = +inputFirstT4.value + +inputSecondT4.value;
+      break;
+    case "-":
+      divT4.innerText = inputFirstT4.value - inputSecondT4.value;
+      break;
+    case "*":
+      divT4.innerText = inputFirstT4.value * inputSecondT4.value;
+      break;
+    case "/":
+      divT4.innerText = inputFirstT4.value / inputSecondT4.value;
+      break;
+    case "%":
+      divT4.innerText = inputFirstT4.value % inputSecondT4.value;
+      break;
+    case "^":
+      divT4.innerText = inputFirstT4.value ** inputSecondT4.value;
+      break;
+  }
 });
