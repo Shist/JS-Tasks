@@ -8,3 +8,13 @@ inputT1.addEventListener("keydown", (event) => {
   newLi.innerText = event.key;
   ulT1.appendChild(newLi);
 });
+
+// Задание 2
+// Вставить в html тег input (просто предусмотреть в разметке).
+// Обрабатывая событие keyup на теге input, выводить в консоль введенный текст каждый раз, как только клиент вписывает любой символ
+// в поле (или стирает любой символ из поля). Вам понадобится считывать значение поля, это input.value
+console.log("Task 2");
+const inputT2 = document.querySelector("input.task-2");
+inputT2.addEventListener("keyup", () => {
+  console.log(inputT2.value);
+});
