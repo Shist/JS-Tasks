@@ -40,8 +40,6 @@ formT3.addEventListener("submit", (event) => {
 // Внутри select будут options - арифметические знаки. В оба инпута пользователь вводит число.
 // Когда пользователь отправляет форму (событие submit), над двумя числами выполняется действие,
 // выбранное в select (чтобы получить выбранный пользователем option, мы "забираем" значение  select.value). Результат отображается в div.
-// 1) решить с помощью if
-// 2) решить с помощью evel (https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/eval)
 console.log("Task 4");
 const formT4 = document.querySelector("form.task-4");
 const inputFirstT4 = document.querySelector("input.task-4-input-1");
@@ -70,4 +68,20 @@ formT4.addEventListener("submit", (event) => {
       divT4.innerText = inputFirstT4.value ** inputSecondT4.value;
       break;
   }
+});
+
+// Задание 5
+// Вставить в разметку html тег button без js (просто предусмотреть в разметке). При наведении на кнопку изменять ее цвет каждый раз
+// рандомным цветом. При выведении мышки за пределы кнопки поворачивать кнопку на рандомный угол от -180 до 180 градусов.
+// Использовать обработку событий mouseenter,mouseleave на этой кнопке.
+console.log("Task 5");
+const btnT5 = document.querySelector("button.task-5");
+btnT5.addEventListener("mouseenter", () => {
+  btnT5.style.backgroundColor = `#${Math.floor(
+    Math.random() * 16777215
+  ).toString(16)}`;
+  btnT5.style.color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+});
+btnT5.addEventListener("mouseleave", () => {
+  btnT5.style.transform = `rotate(${Math.round(Math.random() * 360) - 180}deg)`;
 });
